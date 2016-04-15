@@ -1,17 +1,17 @@
 ## makeCacheMatrix: Function (x)
 ## Parameter List: 
-##		x - a matrix of numbers is passed 
+##	x - a matrix of numbers is passed 
 ##		
 ##	Note: if non-numeric values passed in "solve" will choke with an informative message:
-##  Error in solve.default(data, ...) : 'a' must be a numeric matrix
+##  	Error in solve.default(data, ...) : 'a' must be a numeric matrix
 ##
 ##	Special Variables:
 ##	inverse - inverse of the matrix 
-##	x		- raw matrix	
-##  sub functions 
-##  "set" 			called to persist raw matrix cache and initialize inverse cache
-##	"get"			get raw matrix
-##  "setInverse"	update inverse cache
+##	x		raw matrix	
+##  	sub functions 
+##  	"set" 		called to persist raw matrix cache and initialize inverse cache
+##	"get"		get raw matrix
+##  	"setInverse"	update inverse cache
 ##	"getInverse"	pass inverse cache
 
 ## Interact with the internal "special" cache
@@ -32,14 +32,14 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## cacheSolve: Function (x)
 ## Parameter List: 
-##		x - a matrix of numbers is passed 
-##		... any other parms passed into other 
+##	x - a matrix of numbers is passed 
+##	... any other parms passed into other 
 ##		
 ##	Special Variables:
 ##	none:
 ##
-##  sub functions 
-##  "inverse" 		use "getInverse" to pull cache value from special variables
+##  	sub functions 
+##  	"inverse"	use "getInverse" to pull cache value from special variables
 ##	if the cache contained data (value is NOT NULL)
 ##		thow a message "getting cached data"
 ##		return cached inverse value to caller
@@ -48,6 +48,7 @@ makeCacheMatrix <- function(x = matrix()) {
 ##		get the raw matrix from cache
 ##		calculate the inverse via "solve" returning the value to inverse local variables
 ##		set the cached value of inverse to the local value via the setInverse function
+##	end-if
 ##
 ## Caller interface to interact with the cache handler
 cacheSolve <- function(x, ...) {
